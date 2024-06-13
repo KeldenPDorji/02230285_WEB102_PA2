@@ -3,6 +3,7 @@ import { cors } from "hono/cors";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { HTTPException } from "hono/http-exception";
 import { sign, verify } from "jsonwebtoken";
+import axios from "axios";
 import { jwt } from 'hono/jwt';
 import type { JwtVariables } from 'hono/jwt';
 
@@ -83,6 +84,18 @@ app.post("/login", async (c) => {
   }
 });
 
+// Fetch Pokemon Data from PokeAPI
+app.get("/pokemon/:name", async (c) => {
+  const { name } = c.req.param();
+
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    return c.json({ data: response.data });
+  } catch (error) {
+    return c.json({ message: "Pokemon not found" }, 404);
+  }
+});
+
 // Protected User Resource Endpoints
 app.post("/protected/catch", async (c) => {
   const payload = c.get('jwtPayload');
@@ -139,5 +152,6 @@ app.get("/protected/caught", async (c) => {
 
   return c.json({ data: caughtPokemon });
 });
+
 
 export default app;
