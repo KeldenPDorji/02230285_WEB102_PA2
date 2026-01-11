@@ -307,42 +307,9 @@ bun run db:studio
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the ISC License.
-
-## 👤 Author
-
-**Kelden P. Dorji**
-
 ## 🙏 Acknowledgments
 
 - [PokeAPI](https://pokeapi.co/) for providing Pokémon data
 - [Hono](https://hono.dev/) for the lightweight web framework
 - [Prisma](https://www.prisma.io/) for the excellent ORM
 
-## 📞 Support
-
-For support, email your-email@example.com or open an issue in the repository.
-
----
-
-Made with ❤️ and ☕ by Kelden P. Dorji
-    Authorization: Bearer <JWT_TOKEN>
-
-Response:
-
-    {
-    "data": [
-        {
-        "id": "b23f7255-50f2-479b-8304-d650243d917d",
-        "userId": "2a5eb751-c1fb-4cfc-a846-9991e721428a",
-        "pokemonId": "f4e0b859-1a46-4fab-874b-f8aecc0ca0f3",
-        "caughtAt": "2024-06-13T10:25:25.474Z",
-        "pokemon": {
-            "id": "f4e0b859-1a46-4fab-874b-f8aecc0ca0f3",
-            "name": "mew",
-        }
-        }
-    ]
-    }
