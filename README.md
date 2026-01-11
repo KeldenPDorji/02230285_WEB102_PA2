@@ -83,6 +83,24 @@ bun run start
 
 The server will be running at `http://localhost:3000`
 
+## 🌐 Deployment
+
+This application is ready to deploy on Render, Vercel, Railway, or any platform that supports Bun.
+
+### Quick Deploy to Render:
+
+1. Push your code to GitHub
+2. Sign up at [Render.com](https://render.com)
+3. Create a new Web Service
+4. Connect your GitHub repository
+5. Configure:
+   - **Build Command:** `bash render-build.sh`
+   - **Start Command:** `bash render-start.sh`
+6. Add environment variables (DATABASE_URL, JWT_SECRET, etc.)
+7. Deploy!
+
+📖 **Detailed deployment guide:** See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
+
 ## 📚 API Documentation
 
 ### Base URL

@@ -332,4 +332,10 @@ app.onError((err, c) => {
   return c.json({ message: "Internal Server Error" }, 500);
 });
 
-export default app;
+// Export for Bun server
+export default {
+  port: config.server.port,
+  fetch: app.fetch,
+};
+
+console.log(`🚀 Pokémon API Server started on port ${config.server.port}`);
